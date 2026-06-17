@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Dashboard | Live Rates & News</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <span class="gold-icon">✨</span>
+                <h1>Gold<span class="highlight">Dash</span></h1>
+            </div>
+            <div class="live-rate-card" id="rateCard">
+                <div class="rate-info">
+                    <span class="rate-label">Live Gold Rate</span>
+                    <div class="rate-value">
+                        <span id="goldCurrency">₹</span>
+                        <span id="goldRate">--</span>
+                        <span class="rate-unit" id="goldUnit">/10g</span>
+                    </div>
+                </div>
+                <div class="pulse-indicator"></div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="controls-section">
+                <div class="date-selector-wrapper">
+                    <label for="dateSelect">Select Date for News</label>
+                    <div class="custom-select">
+                        <select id="dateSelect">
+                            <!-- Options will be populated by JS -->
+                        </select>
+                    </div>
+                </div>
+                <button id="getNewsBtn" class="primary-btn" onclick="loadNews()">
+                    <span class="btn-text">Fetch News</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </section>
+
+            <section class="news-section">
+                <div class="section-header">
+                    <h2>Market Insights</h2>
+                    <span class="news-date-display" id="newsDateDisplay">Today</span>
+                </div>
+                
+                <!-- Loading State -->
+                <div id="loader" class="loader hidden">
+                    <div class="spinner"></div>
+                    <p>Fetching latest updates...</p>
+                </div>
+
+                <!-- News Grid -->
+                <div id="newsContainer" class="news-grid">
+                    <!-- News cards will be injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

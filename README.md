@@ -86,3 +86,6 @@ fastapi-gold-news-app/
     ├── style.css           # Premium styling and animations
     └── script.js           # Vanilla JS logic for fetching data
 ```
+
+
+sunil
